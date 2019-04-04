@@ -42,7 +42,7 @@ module.exports = fp(async (fastify, options, next) => {
   next()
 })
 
-function proxyHandler (fastify, eurekaServiceName, PB, grpcCconfig) {
+function proxyHandler (fastify, eurekaServiceName, PB, grpcConfig) {
   let cache = {}
   return new Proxy(
     {},
@@ -57,7 +57,7 @@ function proxyHandler (fastify, eurekaServiceName, PB, grpcCconfig) {
             console.info('client from cache !')
             client = cache[host]
           } else {
-            const pemPath = grpcCconfig.pemPath
+            const pemPath = grpcConfig.pemPath
             const sslCreds = grpc.credentials.createSsl(
               fs.readFileSync(pemPath)
             )
@@ -75,11 +75,11 @@ function proxyHandler (fastify, eurekaServiceName, PB, grpcCconfig) {
             client = cache[host] = new PB(
               host,
               combinedCreds,
-              grpcCconfig.options
+              grpcConfig.options
             )
           }
           let retry = 0
-          const maxRetry = grpcCconfig.retry || 5 // 最大重试次数， 默认5次
+          const maxRetry = grpcConfig.retry || 5 // 最大重试次数， 默认5次
           let customMetadata = new grpc.Metadata()
           Object.keys(metaData).forEach(k => customMetadata.set(k, metaData[k]))
           return new Promise(function invoke (resolve, reject) {
