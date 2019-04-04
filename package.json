@@ -1,0 +1,27 @@
+{
+  "name": "@ruiyun/fastify-grpc-clien",
+  "version": "0.2.0",
+  "description": "fastify grpc plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fastify",
+    "grpc"
+  ],
+  "author": "wen911119@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "@grpc/proto-loader": "^0.4.0",
+    "fastify-plugin": "^1.5.0",
+    "fs-extra": "^7.0.1",
+    "globby": "^9.2.0",
+    "grpc": "^1.19.0",
+    "lodash": "^4.17.11",
+    "reach": "^1.0.1"
+  },
+  "peerDependencies": {
+    "fastify": "^2.1.0"
+  }
+}
