@@ -1,5 +1,5 @@
 {
-  "name": "@ruiyun/fastify-grpc-clien",
+  "name": "@ruiyun/fastify-grpc-client",
   "version": "0.2.0",
   "description": "fastify grpc plugin",
   "main": "index.js",
