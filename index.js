@@ -14,8 +14,8 @@ const opt = {
   oneofs: true
 };
 
-module.exports = fp(async (fastify, options = {}, next) => {
-  const { pbPathsRegExp, services, pemPath, options } = options;
+module.exports = fp(async (fastify, config = {}, next) => {
+  const { pbPathsRegExp, services, pemPath, options } = config;
   if (pbPathsRegExp && services && pemPath && options) {
     const pbPaths = await globby.sync(pbPathsRegExp);
     let protos = {};
@@ -36,7 +36,7 @@ module.exports = fp(async (fastify, options = {}, next) => {
         fastify,
         `${serviceName}:${version}`,
         Reach(protos, url),
-        options
+        config
       );
     }
     fastify.decorate("grpc", _grpc);
