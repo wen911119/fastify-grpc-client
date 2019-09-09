@@ -11,7 +11,7 @@
     "grpc"
   ],
   "author": "wen911119@gmail.com",
-  "license": "ISC",
+  "license": "LGPT",
   "dependencies": {
     "@grpc/proto-loader": "^0.5.2",
     "fastify-plugin": "^1.6.0",
