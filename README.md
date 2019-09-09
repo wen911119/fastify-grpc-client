@@ -2,7 +2,6 @@
 fastapi框架已经内置该插件，所以只要写好配置就可以了。
 ```javascript
 // src/conifg/index.default.js
-// ...
 module.exports = {
   // ...
   grpc: {
