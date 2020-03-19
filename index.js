@@ -4,7 +4,7 @@ const protoLoader = require("@grpc/proto-loader");
 const grpc = require("grpc");
 const { resolve } = require("path");
 const _ = require("lodash");
-const Reach = require("reach");
+const Reach = require("dlv");
 const fs = require("fs-extra");
 const opt = {
   keepCase: true,
